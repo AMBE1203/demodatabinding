@@ -1,6 +1,7 @@
 package com.ambe.demodatabinding.data;
 
 import android.arch.lifecycle.LiveData;
+import android.util.Log;
 
 import java.util.List;
 
@@ -41,6 +42,8 @@ public class TaskLocalDataSource implements TaskDataSource {
 
     @Override
     public void updateTask(TaskEntity task) {
+        Log.d("AMBE1203", "2 " + task.getDescription() + " - " + task.getName() + " - " + task.getId());
+
         taskDAO.updateTask(task);
 
     }

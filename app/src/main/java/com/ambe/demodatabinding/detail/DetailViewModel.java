@@ -4,6 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.ambe.demodatabinding.MainActivity;
 import com.ambe.demodatabinding.R;
@@ -41,9 +42,10 @@ public class DetailViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public void onSaveTaskClicked(){
+    public void onSaveTaskClicked() {
+
         taskRepository.updateTask(mTask.get());
-        Navigation.findNavController(mainActivity, R.id.main_host_fragment).navigate(R.id.mainFragment);
+        Navigation.findNavController(mainActivity, R.id.main_host_fragment).navigateUp();
 
 
     }
